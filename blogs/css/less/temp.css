@@ -1,0 +1,11 @@
+/* 变量 @变量名：*/
+a {
+  color: #e92322;
+}
+/* 混入： 可以定义一个好的样式引入到其它央视中：*/
+.addReadius {
+  border-radius: 10px;
+  -webkit-align-content: center;
+}
+/* 嵌套*/
+/*# sourceMappingURL=temp.css.map */

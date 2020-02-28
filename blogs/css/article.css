@@ -1,0 +1,528 @@
+
+
+/*----------article 上部分-- 右-------*/
+
+.banbox{
+    width: 68.5%;
+    overflow: hidden;
+    float: left;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+.banner{
+    width: 100%;
+    overflow: hidden;
+    float: left;
+}
+.fader{
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;  /* 隐藏多余的*/
+}
+
+.fader .slide{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /*/ 叠词选择出需要看到的图片/*/
+    /*z-index: 0;*/
+    /*opacity: 0;*/
+}
+/*测试。显示一张照片。后续通过js控制*/
+.fader .slide:nth-child(1){
+    z-index: 1;
+    opacity: 1;
+}
+/*// 让图片填满盒子*/
+.fader .slide img{
+    width: 100%;
+    height: 260px;
+    margin: auto;
+}
+/*// 左右按钮,跟图图片大小设置宽高*/
+.fader .prev,
+.fader .next{
+    position: absolute;
+    height: 32px;
+    width: 40px;
+    line-height: 32px;
+    top: 50%;
+    left: 50px;
+    z-index: 5;
+    margin-top: -25px;
+
+    opacity: 0; /* 隐藏*/
+    /*鼠标样式*/
+    cursor: pointer;
+    /*// 动画效果，*/
+    transition: all 200ms;
+}
+.fader .prev {
+    background: url(../images/left.png) no-repeat
+}
+.fader .next {
+    left: auto;
+    right: 50px;
+    background: url(../images/right.png) no-repeat
+}
+
+.banner:hover .fader_controls .page.prev {
+    opacity: .7;
+    left: 20px
+}
+.banner:hover .fader_controls .page.next {
+    opacity: .7;
+    right: 20px
+}
+
+/*// 小圆点*/
+.fader .pager_list{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 26px;
+    padding: 0;
+    line-height: 40px;
+    text-align: center;
+    z-index: 5;
+}
+.fader .pager_list li{
+    border-radius: 10px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 7px;
+    background: #FFFFFF;
+    transition: all 150ms;
+    opacity: .9;
+    text-indent: -9999px; /* 文字隐藏*/
+    cursor: pointer;
+}
+
+/*带有active 显示不一样的颜色*/
+.fader .pager_list li:hover,
+.fader .pager_list li.active{
+    opacity: 1;
+    background: #12b7de;
+}
+/*----------article 上部分 左---------*/
+
+.headline{
+    width: 30%;
+    float: right;
+    overflow: hidden;
+}
+.headline ul{
+    height: 260px;
+}
+
+.headline ul li{
+    width: 100%;
+    background: #000;
+    height: 125px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative; /* 用来定位字体*/
+}
+.headline ul li a{
+    display: block;
+    height: 100%;
+    overflow: hidden;
+}
+
+.headline ul li img{
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+
+    /*动画效果*/
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    transition: all 0.5s;
+}
+.headline ul li:hover img{
+    transform: scale(1.1);
+    opacity: .9;
+}
+
+.headline ul li span{
+    height: 48px;
+    line-height: 24px;
+    position: absolute;
+    top: 30%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #FFFFFF;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 15px;
+    overflow: hidden;
+
+    /*/// 多出来的字体省略*/
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+
+/*----------article 中间部分---------*/
+.tab-box{
+    clear: both;  /* 清除浮动*/
+    /*position: relative;*/
+}
+.whitebg{
+    background: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.tab-buttons{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-bottom: #e4e3e3 1px solid;
+}
+.tab-buttons li {
+    height: 40px;
+    width: 90px;
+    float: left;
+    line-height: 40px;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    transition: all 1s
+}
+
+.newscurrent:after{
+    width: 100%;
+    position: absolute;
+    content: "";
+    background: #000;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+}
+
+
+.tab-buttons .newscurrent a,
+.tab-buttons ul li:hover a{
+    color: red;
+}
+
+
+
+
+.news-list{
+    width: 100%;
+    display:none;
+}
+.news-list li{
+    height: 22px;
+    overflow: hidden;
+    line-height: 32px;
+    padding: 0 20px 10px 20px;
+}
+
+/*.news-list li a{*/
+/*    height: 32px;*/
+/*}*/
+.news-list li img{
+    width: 100%;
+}
+/*// 鼠标移到标签上是，高度为百分比，其余的不设置*/
+/*.news-list li:hover{*/
+/*    height: 100%;*/
+/*    background: #F7F7F7;*/
+/*}*/
+
+/*.news-list li:hover a{*/
+/*    color: #000;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.news-list li:hover i{*/
+/*    background: #222;*/
+/*}*/
+
+/*.news-list .sty-li:nth-child(1){*/
+/*    height: 100%;*/
+/*    background: #F7F7F7;*/
+/*}*/
+
+/*.news-list .sty-li:nth-child(1) a{*/
+/*    color: #000;*/
+/*    font-weight: bold;*/
+/*}*/
+/*.news-list .sty-li:nth-child(1) i{*/
+/*    background: #222;*/
+/*}*/
+
+
+.news-list .sty-li{
+    height: 100%;
+    background: #F7F7F7;
+}
+
+.news-list .sty-li a{
+    color: #000;
+    font-weight: bold;
+}
+.news-list .sty-li i{
+    background: #222;
+}
+
+
+
+
+/*----------i标签----*/
+.news-item ul li i {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #9a9a9a;
+    float: left;
+    margin-top: 6px;
+    margin-right: 20px;
+    position: relative;
+    font-style: normal
+}
+
+.news-item ul li i::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 9px;
+    color: #fff;
+    line-height: 20px;
+    width: 20px;
+    text-align: center
+}
+
+.news-item ul li:first-child i {
+    background: #222;
+}
+
+.news-item ul li:first-child i::before {
+    content: "1";
+}
+
+.news-item ul li:nth-child(2) i::before {
+    content: "2";
+}
+
+.news-item ul li:nth-child(3) i::before {
+    content: "3";
+}
+
+.news-item ul li:nth-child(4) i::before {
+    content: "4";
+}
+
+.news-item ul li:nth-child(5) i::before {
+    content: "5";
+}
+/*-----------结束--*/
+
+.news-list p{
+    height: 48px;
+    line-height: 24px;
+    font-size: 14px;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+
+/*-----广告图----------------------------*/
+.ad a img{
+    width: 100%;
+}
+
+/*-----------文章内容---------*/
+
+
+.htitle{
+    font-size: 16px;
+    line-height: 40px;
+    border-bottom: 1px solid #eeeeee;
+    color: #484848;
+    font-weight: normal;
+    position: relative;
+    margin-bottom: 10px;
+
+    transition: all .5s ease;
+}
+.htitle:after{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: #000000;
+    left: 0;
+    bottom: 0;
+}
+
+
+.htitle:hover:after{
+    /*// 鼠标动画效果 宽度延迟*/
+    width: 80px;
+}
+
+.bloglist ul{
+    padding: 10px;
+}
+
+.bloglist li{
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-bottom: #eeeeee 1px dashed;
+    padding-bottom: 20px;
+    min-height: 120px;
+    position: relative;
+
+}
+.blog-title{
+    padding: 0 0 10px 0;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.bloglist li:hover .blog-title a{
+    color: #337ab7;
+}
+.blog-title b{
+    color: #FF0000;
+}
+
+.blog-pic{
+    float: left;
+    width: 23.2%;
+    margin-right: 20px;
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
+}
+.blog-pic i{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    font-size: 14px;
+    padding: 3px 5px;
+    background-color: rgba(18,182,211,.6);
+    /*background-color: #337ab780;*/
+}
+.blog-pic i a{
+    color: #FFFFFF;
+}
+
+.blog-text{
+    font-size: 14px;
+    margin-top: 20px;
+    color: #666;
+
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+}
+.blog-info{
+    margin-top: 20px;
+    overflow: hidden;
+    color: #999;
+    line-height: 34px;
+}
+.blog-info span{
+    margin: 5px;
+}
+.blog-info span a{
+    color: #30a6de;
+}
+/*// 头像*/
+.avatar{
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    padding: 2px;
+
+    /*----头像设置圆框*/
+    background: -webkit-linear-gradient(bottom left, rgba(0,153,255,.9), rgba(42,228,197,.7));
+    background: -o-linear-gradient(bottom left, rgba(0,153,255,.9), rgba(42,228,197,.7));
+    background: linear-gradient(to top right, rgba(0,153,255,.9), rgba(42,228,197,.7));
+}
+
+.avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+a.view-more{
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    color: #fff;
+    border-radius: 3px;
+    background: #12b7de;
+    padding: 3px 10px;
+
+}
+
+/*----------添加头像V*/
+/*.active:after{*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    !*background: url(../images/v.png) no-repeat;*!*/
+/*    background-size: 12px;*/
+/*    width: 12px;*/
+/*    height: 12px;*/
+/*    right: 0;*/
+/*    bottom: 0*/
+/*}*/
+
+
+
+
+
+
+
+
+/*------------------------*/
+
+/*----------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

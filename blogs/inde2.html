@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>Title</title>
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/article.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/slideshow.js"></script>
+    <!--        <link rel="stylesheet" href="css/1.css">-->
+    <style>
+        .excerpt {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            padding: 10px 0 30px 0;
+            position: relative;
+            border-radius: 3px;
+
+            /*border: red 1px solid;*/
+            transition: all 0.6s;
+        }
+
+        .excerpt:hover {
+            margin-bottom: 27px;
+            padding: 15px 0 40px 0;
+            border-bottom: #d0d2d4 solid 2px;
+            border-top: #d0d2d4 solid 2px;
+        }
+
+        /*.excerpt:hover:before {*/
+        /*    outline: #d0d2d4 20px solid;*/
+        /*    content: '';*/
+        /*    border: 10px solid rgba(255,255,255,0.3);*/
+        /*    padding: 10px solid red;*/
+        /*    display: block;*/
+        /*    width: 100%;*/
+        /*    height: 100%;*/
+        /*    top: 0;*/
+        /*    left: 0;*/
+        /*    position: absolute;*/
+        /*    box-sizing: border-box;*/
+
+        /*}*/
+
+        /*.excerpt:after,*/
+        /*.excerpt:before{*/
+        /*    display: table;*/
+        /*    content: "";*/
+        /*    line-height: 0;*/
+        /*}*/
+        .e-x {
+            /*text-align: center;*/
+            height: 30px;
+            line-height: 30px;
+            margin: 0 10px 15px 0;
+        }
+
+        .label {
+            line-height: 20px;
+            color: #fff;
+            vertical-align: baseline;
+            white-space: nowrap;
+            margin-right: 5px;
+            /*position: relative;*/
+            float: left;
+            top: -2px;
+            padding: 2px 6px 4px;
+        }
+
+        .label-important {
+            background-color: #FC9D9A;
+        }
+
+        .excerpt .e-x h2 {
+            /*line-height: 26px;*/
+            float: left;
+            /*border: 0;*/
+            margin: 0 10px;
+            /*font-size: ;*/
+            font: normal normal 23px "Times New Roman";
+            vertical-align: baseline;
+        }
+
+        .e-x h2 a {
+            color: #00c1de;
+        }
+
+        .excerpt .focus {
+            float: left;
+            width: 26%;
+            margin-right: 10px;
+        }
+
+        .excerpt .focus img {
+            width: 100%;
+            /*动画效果*/
+            -moz-transition: all .5s ease;
+            -webkit-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            transition: all .5s ease;
+            transition: all 0.5s;
+        }
+
+        .excerpt .focus:hover img {
+            transform: scale(1.1);
+            opacity: .9;
+        }
+
+        .excerpt .note {
+
+            color: #777;
+            line-height: 24px;
+            font: normal 16px 'Times New Roman',  Georgia,   Times,  serif;;
+            text-indent: 2em;
+            letter-spacing: 2px;
+        }
+
+        .excerpt p.auth-span {
+            float: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .excerpt .muted {
+            font-size: 13px;
+            margin-right: 20px;
+            color: #999;
+
+        }
+
+        .fa {
+            width: 16px;
+            font-size: 1.23em;
+            text-align: center;
+            display: inline-block;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .excerpt .muted:hover a,
+        .excerpt .muted:last-child a,
+        .excerpt .e-x:hover h2 a {
+            color: red;
+        }
+
+        .fa-user,
+        .fa-comments-o {
+            color: #12b7de;
+        }
+
+
+    </style>
+
+
+    <style>
+        /*// 登入注册*/
+        .box-login {
+            height: 50px;
+            float: right;
+            width: 10%;
+        }
+
+        .login span {
+            line-height: 50px;
+            font-size: 20px;
+            color: #FFFFFF;
+            margin: 0 3px;
+            width: 20px;
+            cursor: pointer;
+        }
+
+        .conceal {
+            display: none;
+        !important;
+        }
+
+        .box-login .stat-bar {
+            height: 50px;
+            color: #FFFFFF;
+            line-height: 50px;
+            /*display: none;*/
+        }
+
+
+    </style>
+
+
+    <style>
+
+
+        .back-upt {
+            display: none;
+            position: fixed;
+            right: 80px;
+            bottom: 70px;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        .back-upt i {
+            width: 0;
+            font-size: 50px;
+            color: #1296DB;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+<!--上部分-->
+<header id="header">
+
+    <div class="navbox">
+        <h2 id="mnavh"><span class="navicon"></span></h2>
+        <!--        logo-->
+        <div class="logo">
+            <a href="/">
+                Master博客
+            </a></div>
+
+        <nav>
+            <!--    导航栏-->
+            <ul id="starlist" class="stat-bar">
+                <li><a href="/" id="selected">首页</a></li>
+                <li class="menu"><a href="#">后端</a>
+                    <ul class="sub">
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">Golang</a></li>
+                        <li><a href="#">Node.js</a></li>
+                    </ul>
+                    <span></span></li>
+                <li class="menu"><a href="#">web前端</a>
+                    <ul class="sub">
+                        <li><a href="#">css</a></li>
+                        <li><a href="#">js</a></li>
+                        <li><a href="#">Vue</a></li>
+                        <li><a href="#">React</a></li>
+                    </ul>
+                    <span></span></li>
+                <li class="menu"><a href="#">生活随记</a>
+                    <ul class="sub">
+                        <li><a href="#">我的日记</a></li>
+                        <li><a href="#">程序人生</a></li>
+                    </ul>
+                    <span></span></li>
+                <li><a href="#">碎言碎语</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">时间轴</a></li>
+                <li><a href="#">留言板</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="box-login">
+            <div class="login conceal">
+                <span>登入</span>
+                <span>||</span>
+                <span>注册</span>
+            </div>
+            <div class="stat-bar">
+                <!--                        <i class="fa fa-address-book"></i>-->
+                <li class="menu"><a href="#">个人中心</a>
+                    <ul class="sub">
+                        <li><a href="#">账号信息</a></li>
+                        <li><a href="#">登入历史</a></li>
+
+                    </ul>
+                    <span></span></li>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</header>
+
+<div class="searchbox">
+</div>
+
+<article>
+    <!--// 中间部分    -->
+
+    <!--    article右边部分-->
+    <div class="lbox">
+
+        <!--    // 上部分---------------->
+        <div class="banbox">
+            <div class="banner">
+                <div id="banner" class="fader">
+
+                    <li class="slide"><a href="#" target="_blank"><img src="images/show1.jpg"></a></li>
+
+                    <li class="slide"><a href="#" target="_blank"><img src="images/show3.jpg"></a></li>
+
+                    <li class="slide"><a href="#" target="_blank"><img src="images/show2.jpg"></a></li>
+
+                    <li class="slide"><a href="#" target="_blank"><img src="images/show1.jpg"></a></li>
+                    <div class="fader_controls">
+                        <div class="page prev" data-target="prev"></div>
+                        <div class="page next" data-target="next"></div>
+                        <ul class="pager_list">
+                            <li class="page active" data-target="1">1</li>
+                            <li class="page" data-target="2">2</li>
+                            <li class="page" data-target="3">3</li>
+                            <li class="page" data-target="4">4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--    上右部分-->
+        <div class="headline">
+            <ul>
+                <li><a href="#"><img src="images/h1.jpg">
+                    <span>为什么说10月24日是程序员的节日？为什么说10月24日是程序员的节日为什么说10月24日是程序员的节日为什么说10月24日是程序员的节日</span></a></li>
+                <li><a href="#"><img src="images/h2.jpg"><span>个人网站做好了，百度不收录怎么办？来，看看他们怎么做的。</span></a></li>
+            </ul>
+        </div>
+
+        <!--  /// 中将部分------------->
+        <div class="tab-box whitebg clearfix">
+            <div class="tab-buttons">
+                <ul>
+                    <li class="newscurrent"><a href="#">个人博客</a></li>
+                    <li><a href="#">Web端</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">Golang</a></li>
+                    <li><a href="#">最新推荐</a></li>
+                </ul>
+            </div>
+
+            <div class="news-tab">
+                <div class="news-item">
+                    <!--                    ~~~-->
+                    <ul class="news-list" style="display: block">
+                        <li class="sty-li"><i></i><a href="#" title="">安静地做一个爱设计的女子</a>
+                            <p>自从入了这行，很多人跟我说可以做网络教程，我也有考虑，但最终没有实现，因为我觉得在这个教程泛滥的时代，直接做一套免费的原创个人博客模板更为实在。每当看到自己喜欢的配色图片</p>
+                        </li>
+                        <li><i></i><a href="#" title="">电话以外的宁静</a>
+                            <p>
+                                电话很久没有响过了，我的QQ也很久没有在线了，消失了很多天，刚刚结识的朋友因为我身上又起了红疹，每天都发来消息询问我的情况，我做到了这么多天来的沉默，我相信，没有网络，我还是可以继续我自己的生活</p>
+                        </li>
+                        <li><i></i><a href="#" title="">遇见一个未知的你</a>
+                            <p>听着那熟悉的歌曲看着那一张张可爱的图片.-读着我们共同欣赏的诗……也许我们曾经相遇,看着你远去的背影 ,沿着你来的方向 ,回忆时间穿梭于幸福的点点滴滴....</p></li>
+                        <li><i></i><a href="#" title="">个人网站做好了，百度不收录怎么办？来，看看他们怎么做的...</a>
+                            <p>不管你是学前端的还是后端的，作为一个程序员，做一个自己的博客，那是必然的。咱们的圈子就这么大，想让更多的人了解你，看看你的技术多牛逼，扔一个博客地址就行了</p></li>
+                        <li><i></i><a href="#" title="">个人博客，属于我的小世界！</a>
+                            <p>
+                                个人博客，用来做什么？我刚开始就把它当做一个我吐槽心情的地方，也就相当于一个网络记事本，写上一些关于自己生活工作中的小情小事，也会放上一些照片，音乐。每天工作回家后就能访问自己的网站，一边听着音乐，一边写写文章。</p>
+                        </li>
+
+                    </ul>
+                    <!--                    -->
+                    <ul class="news-list">
+                        <li class="sty-li"><i></i><a href="#" title="">web端</a>
+                            <p>自从入了这行，很多人跟我说可以做网络教程，我也有考虑，但最终没有实现，因为我觉得在这个教程泛滥的时代，直接做一套免费的原创个人博客模板更为实在。每当看到自己喜欢的配色图片</p>
+                        </li>
+                        <li><i></i><a href="#" title="">电话以外的宁静</a>
+                            <p>
+                                电话很久没有响过了，我的QQ也很久没有在线了，消失了很多天，刚刚结识的朋友因为我身上又起了红疹，每天都发来消息询问我的情况，我做到了这么多天来的沉默，我相信，没有网络，我还是可以继续我自己的生活</p>
+                        </li>
+                        <li><i></i><a href="#" title="">遇见一个未知的你</a>
+                            <p>听着那熟悉的歌曲看着那一张张可爱的图片.-读着我们共同欣赏的诗……也许我们曾经相遇,看着你远去的背影 ,沿着你来的方向 ,回忆时间穿梭于幸福的点点滴滴....</p></li>
+
+                    </ul>
+                    <ul class="news-list">
+                        <li class="sty-li"><i></i><a href="#" title="">Python</a>
+                            <p>自从入了这行，很多人跟我说可以做网络教程，我也有考虑，但最终没有实现，因为我觉得在这个教程泛滥的时代，直接做一套免费的原创个人博客模板更为实在。每当看到自己喜欢的配色图片</p>
+                        </li>
+                        <li><i></i><a href="#" title="">电话以外的宁静</a>
+                            <p>
+                                电话很久没有响过了，我的QQ也很久没有在线了，消失了很多天，刚刚结识的朋友因为我身上又起了红疹，每天都发来消息询问我的情况，我做到了这么多天来的沉默，我相信，没有网络，我还是可以继续我自己的生活</p>
+                        </li>
+                        <li><i></i><a href="#" title="">遇见一个未知的你</a>
+                            <p>听着那熟悉的歌曲看着那一张张可爱的图片.-读着我们共同欣赏的诗……也许我们曾经相遇,看着你远去的背影 ,沿着你来的方向 ,回忆时间穿梭于幸福的点点滴滴....</p></li>
+                        <li><i></i><a href="#" title="">个人网站做好了，百度不收录怎么办？来，看看他们怎么做的...</a>
+                            <p>不管你是学前端的还是后端的，作为一个程序员，做一个自己的博客，那是必然的。咱们的圈子就这么大，想让更多的人了解你，看看你的技术多牛逼，扔一个博客地址就行了</p></li>
+                        <li><i></i><a href="#" title="">个人博客，属于我的小世界！</a>
+                            <p>
+                                个人博客，用来做什么？我刚开始就把它当做一个我吐槽心情的地方，也就相当于一个网络记事本，写上一些关于自己生活工作中的小情小事，也会放上一些照片，音乐。每天工作回家后就能访问自己的网站，一边听着音乐，一边写写文章。</p>
+                        </li>
+
+                    </ul>
+                    <ul class="news-list">
+                        <li class="sty-li"><i></i><a href="#" title="">Golang</a>
+                            <p>自从入了这行，很多人跟我说可以做网络教程，我也有考虑，但最终没有实现，因为我觉得在这个教程泛滥的时代，直接做一套免费的原创个人博客模板更为实在。每当看到自己喜欢的配色图片</p>
+                        </li>
+                        <li><i></i><a href="#" title="">电话以外的宁静</a>
+                            <p>
+                                电话很久没有响过了，我的QQ也很久没有在线了，消失了很多天，刚刚结识的朋友因为我身上又起了红疹，每天都发来消息询问我的情况，我做到了这么多天来的沉默，我相信，没有网络，我还是可以继续我自己的生活</p>
+                        </li>
+                        <li><i></i><a href="#" title="">遇见一个未知的你</a>
+                            <p>听着那熟悉的歌曲看着那一张张可爱的图片.-读着我们共同欣赏的诗……也许我们曾经相遇,看着你远去的背影 ,沿着你来的方向 ,回忆时间穿梭于幸福的点点滴滴....</p></li>
+                        <li><i></i><a href="#" title="">个人网站做好了，百度不收录怎么办？来，看看他们怎么做的...</a>
+                            <p>不管你是学前端的还是后端的，作为一个程序员，做一个自己的博客，那是必然的。咱们的圈子就这么大，想让更多的人了解你，看看你的技术多牛逼，扔一个博客地址就行了</p></li>
+                        <li><i></i><a href="#" title="">个人博客，属于我的小世界！</a>
+                            <p>
+                                个人博客，用来做什么？我刚开始就把它当做一个我吐槽心情的地方，也就相当于一个网络记事本，写上一些关于自己生活工作中的小情小事，也会放上一些照片，音乐。每天工作回家后就能访问自己的网站，一边听着音乐，一边写写文章。</p>
+                        </li>
+
+                    </ul>
+                    <ul class="news-list">
+                        <li class="sty-li"><i></i><a href="#" title="">最新资讯</a>
+                            <p>自从入了这行，很多人跟我说可以做网络教程，我也有考虑，但最终没有实现，因为我觉得在这个教程泛滥的时代，直接做一套免费的原创个人博客模板更为实在。每当看到自己喜欢的配色图片</p>
+                        </li>
+                        <li><i></i><a href="#" title="">电话以外的宁静</a>
+                            <p>
+                                电话很久没有响过了，我的QQ也很久没有在线了，消失了很多天，刚刚结识的朋友因为我身上又起了红疹，每天都发来消息询问我的情况，我做到了这么多天来的沉默，我相信，没有网络，我还是可以继续我自己的生活</p>
+                        </li>
+                        <li><i></i><a href="#" title="">遇见一个未知的你</a>
+                            <p>听着那熟悉的歌曲看着那一张张可爱的图片.-读着我们共同欣赏的诗……也许我们曾经相遇,看着你远去的背影 ,沿着你来的方向 ,回忆时间穿梭于幸福的点点滴滴....</p></li>
+                        <li><i></i><a href="#" title="">个人网站做好了，百度不收录怎么办？来，看看他们怎么做的...</a>
+                            <p>不管你是学前端的还是后端的，作为一个程序员，做一个自己的博客，那是必然的。咱们的圈子就这么大，想让更多的人了解你，看看你的技术多牛逼，扔一个博客地址就行了</p></li>
+                        <li><i></i><a href="#" title="">个人博客，属于我的小世界！</a>
+                            <p>
+                                个人博客，用来做什么？我刚开始就把它当做一个我吐槽心情的地方，也就相当于一个网络记事本，写上一些关于自己生活工作中的小情小事，也会放上一些照片，音乐。每天工作回家后就能访问自己的网站，一边听着音乐，一边写写文章。</p>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ad whitebg">
+            <a href="#" target="_blank">
+                <img src="images/壁纸1.jpg"></a>
+        </div>
+        <!--        &#45;&#45;&#45;&#45;&#45;&#45;下部，文章排序&#45;&#45;&#45;&#45;-->
+        <div class="whitebg bloglist">
+
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a
+                            href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span> <span class="muted"><i
+                        class="fa fa-eye"></i> 8948浏览</span> <span class="muted"><i class="fa fa-comments-o"></i> <a
+                        target="_blank" href="#">1评论</a></span><span
+                        class="muted">
+<a href="javascript:;" data-action="ding" data-id="2200" class="action"><i class="fa fa-heart-o"></i><span
+        class="count">19</span>喜欢</a></span></p>
+            </div>
+
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a
+                            href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span> <span class="muted"><i
+                        class="fa fa-eye"></i> 8948浏览</span> <span class="muted"><i class="fa fa-comments-o"></i> <a
+                        target="_blank" href="#">1评论</a></span><span
+                        class="muted">
+<a href="javascript:;" data-action="ding" data-id="2200" class="action"><i class="fa fa-heart-o"></i><span
+        class="count">19</span>喜欢</a></span></p>
+            </div>
+
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a
+                            href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span> <span class="muted"><i
+                        class="fa fa-eye"></i> 8948浏览</span> <span class="muted"><i class="fa fa-comments-o"></i> <a
+                        target="_blank" href="#">1评论</a></span><span
+                        class="muted">
+<a href="javascript:;" data-action="ding" data-id="2200" class="action"><i class="fa fa-heart-o"></i><span
+        class="count">19</span>喜欢</a></span></p>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!--   article 左边部分-->
+    <div class="rbox">
+        <div class="rbox-whit">
+            <!--         <div class="aside-box">-->
+            <div class="aside-box">
+                <div class="user-card-bg clearfix">
+                    <!--                // 用户头像-->
+                    <div class="user-img"><a href="#"><img src="images/userimg.png"></a></div>
+                    <div class="user-name">
+                        <p>博主：Mater</p>
+                        <p>职业：Web前端,后端开发</p>
+                        <p>现居：四川省-成都市</p>
+                        <p>Email：1010227175g@qq.com</p>
+
+                    </div>
+                    <ul class="box-icon">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!--    // 搜索框-->
+        <div class="whitebg">
+            <div class="rbox-search clearfix">
+                <input type="text" name="keyword" class="form-control" size="35" placeholder="请输入关键字" maxlength="15"
+                       autocomplete="off">
+                <button type="button"> 搜索</button>
+            </div>
+        </div>
+        <!--        // 每日一句-->
+        <div class="box-daily">
+            <h3>每日一句</h3>
+            <div class="daily-txt">
+                <h4>2020年02月28日 星期五 </h4>
+                <p>
+                    “If you love me, let it be for naught, except for love's sake only.”--Browning
+                    <br>
+                    “如果你爱我，那就不要为了其他，只为爱情。”--勃朗宁
+                </p>
+            </div>
+
+        </div>
+
+        <!--        // 标签云-->
+        <div class="box-daily">
+            <h3>标签云</h3>
+            <div class="daily-txt clearfix">
+                <div class="daily-tag clearfix">
+                    <!--                    <li>-->
+                    <!--                    <a href="#">pythong算法导论意义<span class="hint-top">55</span></a></li>-->
+                    <!--                    <a href="#">javaScript<span class="hint-top">55</span></a>-->
+                    <!--                    <a href="#">Web前端<span class="hint-top">55</span></a>-->
+                    <!--                    <a href="#">Golang<span class="hint-top">55</span></a>-->
+                    <!--                    <a href="#">人工智能<span class="hint-top">55</span></a>-->
+                    <!--                    <a href="#">算法<span class="hint-top">55</span></a>-->
+                    <!--                    <a href="#">爬虫<span class="hint-top">55</span></a>-->
+
+                    <li>
+                        <a href="#">python<span class="hint-top">55</span></a></li>
+                    <li><a href="#">javaScript<span class="hint-top">55</span></a></li>
+                    <li><a href="#">Web前端<span class="hint-top">55</span></a></li>
+                    <li><a href="#">Golang<span class="hint-top">55</span></a></li>
+                    <li><a href="#">人工智能<span class="hint-top">55</span></a></li>
+                    <li><a href="#">算法<span class="hint-top">55</span></a></li>
+                    <li><a href="#">爬虫<span class="hint-top">55</span></a></li>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="box-daily">
+            <h3>博客链接</h3>
+            <div class="daily-txt clearfix">
+                <div class="daily-link">
+                    <a href="#">python</a>
+                    <a href="#">javaScript</a>
+                    <a href="#">Web前端</a>
+                    <a href="#">Golang</a>
+                    <a href="#">人工智能</a>
+                    <a href="#">算法</a>
+                    <a href="#">爬虫</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!--// 回顶部按钮-->
+
+<div class="back-upt" aria-label="回到顶部">
+    <i class="fa fa-arrow-circle-up"></i></div>
+
+<script>
+
+
+</script>
+</body>
+</html>
