@@ -2,17 +2,314 @@
 
 /* 变量 @变量名：*/
 
-@baseColor:#e92322;
-a{
+@baseColor: #e92322;
+a {
   color: @baseColor;
 }
 
 /* 混入： 可以定义一个好的样式引入到其它央视中：*/
-.addReadius{
+.addReadius {
   border-radius: 10px;
   -webkit-align-content: center;
 }
 
 
-
 /* 嵌套*/
+
+
+@bottomColor: #FFF;
+
+
+.but-che {
+  height: 40px;
+  width: 100px;
+  font-size: 16px;
+  color: white;
+  line-height: 40px;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  background-color: #1296DB;
+  cursor: pointer;
+}
+
+/*-----文章详情页------start-------*/
+/*文章详情页 */
+.artic-top {
+  background-color: @bottomColor;
+  border-radius: 4px;
+  height: 40px;
+  margin-top: 10px;
+  line-height: 40px;
+  padding-left: 20px;
+  border-bottom: 1px solid #e4e3e3;
+  overflow: hidden;
+
+  &:nth-child(*) {
+    float: left;
+    margin-right: 5px;
+    //letter-spacing: 2px;
+  }
+
+  &:nth-child(1) i {
+    font-family: 'icomoon';
+    font-size: 16px;
+    color: dodgerblue;
+  }
+
+  &:nth-last-child {
+    color: #fbfbfb;
+  }
+}
+
+
+.head-art {
+  background-color: @bottomColor;
+  padding-left: 20px;
+
+  border-bottom: 1px solid #e4e3e3;
+  line-height: 30px;
+  overflow: hidden;
+
+  h1 {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #00c1de;
+  }
+
+  .art-tag {
+    padding-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .art-tag span {
+    float: left;
+    margin-right: 15px;
+  }
+
+  .muted i {
+    color: #00c1de;
+  }
+
+  .muted i:nth-last-child {
+    color: red;
+  }
+}
+
+.whitebg .up-like {
+  line-height: 50px;
+  width: 20%;
+  font-size: 20px;
+  background: #E2523A;
+  text-align: center;
+  border-radius: 4px;
+  margin: 40px auto 20px;
+  box-shadow: 1px 2px 6px 0 rgba(0, 0, 0, .2);
+  cursor: pointer;
+  font-family: "futura", arial;
+
+  &:hover {
+    color: white;
+  }
+}
+
+
+.msg-board {
+  margin-top: 20px;
+
+  .msg-art {
+    font-size: 20px;
+    font-weight: 880;
+
+    a {
+      color: #2c3e50;
+    }
+
+    &:hover {
+      width: 110px
+    }
+  }
+}
+
+
+/*评论输入框*/
+
+.pl-area-post {
+  width: 100%;
+  padding: 10px 15px 50px;
+  box-sizing: border-box;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, .08);
+  position: relative;
+
+  .pl-post-word {
+    //display: none;
+    //display: block;
+    width: 100%;
+    height: 120px;
+    border: 0;
+    padding-top: 5px;
+    resize: none;
+    font-size: 16px;
+    outline: 0;
+    border-radius: 8px;
+  }
+
+  input {
+    .but-che();
+    position: absolute;
+    bottom: 10px;
+    right: 9px;
+
+  }
+
+  .checkout {
+    //display: none;
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    top: 0;
+    left: 0;
+    color: red;
+    background-color: #f2f2f260;
+    text-align: center;
+    line-height: 180px;
+    margin: 0 auto;
+
+    .but-che {
+      display: inline-block;
+      color: white;
+      margin: 0 10px;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+
+/*数量显示条*/
+.pl-header {
+  height: 70px;
+  width: 100%;
+  line-height: 30px;
+  padding: 20px 0;
+  box-sizing: border-box;
+
+  em {
+    color: red;
+  }
+}
+
+
+/* 评论区用户*/
+
+.me-area {
+  margin: 15px 0;
+  border-radius: 5px;
+  background-color: #cccccc30;
+
+  .me-area-user {
+
+    float: left;
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .me-area-cont {
+    width: 90%;
+    float: left;
+    box-sizing: border-box;
+
+    ul li {
+      float: left;
+      margin: 5px 10px 10px 0;
+      font-size: 12px;
+
+      &:nth-child(1) {
+        font-weight: 999;
+      }
+    }
+
+    .me-saytext {
+      margin: 5px 0;
+    }
+
+    .me-tool {
+      text-align: right;
+      //line-height: 16px;
+      font-size: 16px;
+      cursor: pointer;
+
+      i:hover {
+        font-size: 30px;
+        color: pink;
+      }
+    }
+
+    .pl-area-post {
+      display: none;
+      border-radius: 5px;
+    }
+
+    .me-reply {
+      border-top: 1px solid red;
+    }
+  }
+}
+
+/*-----------end-------*/
+
+
+/*-------登入注册----*/
+
+
+.m-login{
+  width: 500px;
+  height: 500px;
+ background-color: #1296DB;
+  text-align: right;
+  margin: 0 auto;
+ align-items: center;
+
+
+
+
+  .login-inp{
+    position: relative;
+
+    div {
+    height: 40px;
+    width: 300px;
+    margin: 10px 30px 10px 0;
+    i {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      //left: 50%;
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 10px 15px;
+    }
+  }
+  }
+
+
+}
+
+
+
+
+
+
+

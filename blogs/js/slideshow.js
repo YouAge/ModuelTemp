@@ -1,5 +1,15 @@
 $(function () {
 
+    // 导航栏 动画效果效果 .stat-bar li:hover ul.sub
+    var $statBar = $('.stat-bar li')
+
+    $statBar.hover(function () {
+        $(this).find('.sub').stop().slideToggle(200);
+
+    })
+
+
+
     // 轮播图
     var $banner = $('#banner');
     var $slide = $('li.slide');
@@ -83,8 +93,8 @@ $(function () {
     var $newsul = $('ul.news-list')
     $buttList.mouseover(function () {
         // var $box = "<style>.newscurrent:after{'display':'none' } </style>>"
-      $(this).addClass("newscurrent").siblings().removeClass("newscurrent")
-      //   $newsul.eq($(this).index())[0].style.display='block'
+        $(this).addClass("newscurrent").siblings().removeClass("newscurrent")
+
         $newsul.eq($(this).index()).show().siblings().hide()
 
         // for (var i=0;i<$newsul.length;i++){
@@ -93,9 +103,8 @@ $(function () {
         //         // $newsul.eq(i)[0].hide()
         //     }
         // }
+        //   $newsul.eq($(this).index())[0].style.display='block'
     });
-
-
 
 
     // function Color() {
@@ -105,67 +114,66 @@ $(function () {
     //     return `rgba(${r},${g},${b},10)`
     // }
 
-    var colorList = ['#eb51be','#f8c340','#b59dd6','#73b842','#4c0ed9',
-    "#21cf80","#89a5b5",'#ff944d'
+    var colorList = ['#eb51be', '#f8c340', '#b59dd6', '#73b842', '#4c0ed9',
+        "#21cf80", "#89a5b5", '#ff944d'
     ];
 
-    console.log(colorList);
+    // console.log(colorList);
     //生成随机颜色
-     var randomColor = '#'+Math.floor(Math.random()*(2<<23)).toString(16);
+    // var randomColor = '#' + Math.floor(Math.random() * (2 << 23)).toString(16);
     // s随机色彩生成
     var $boxTag = $('.daily-tag').children();
-    console.log(randomColor)
-    for (var i=0; i<$boxTag.length;i++){
-        $boxTag[i].style.background = colorList[Math.floor(Math.random()*colorList.length)]
+    // console.log(randomColor)
+    for (var i = 0; i < $boxTag.length; i++) {
+        $boxTag[i].style.background = colorList[Math.floor(Math.random() * colorList.length)]
         // $boxTag[i].style.background = '#'+Math.floor(Math.random()*(2<<23)).toString(16)+'90';
     }
 
 
+// ----标签按钮
+//         $boxTag.hover(function () {
+//            console.log('123',$(this).find('.hint-top'))
+//             // $(this).find('.hint-top').stop().slideToggle();
+//             $(this).find('.hint-top').stop().slideDown();
+//
+//         },function () {
+//             $(this).find('.hint-top').stop().slideUp()
+//         })
 
 
 
-
-
-
-
-
-
+    //===== 回到顶部
     var $topUpt = $('.back-upt')
-    // var $windHeight = $(window).clientHeight;
-    // var $windHeight = document.documentElement.clientHeight;
-    // console.log(pagelookheight)
+    // var $windHeight = document.documentElement.clientHeight; // 获取一页的高度
     $(window).scroll(function () {
-
-        // console.log($(window).scrollTop())
-        if ($(window).scrollTop() > 60) {
-            $topUpt.fadeIn(500);
-            // $topUpt[0].style.display = 'block';
-
-        } else {
-            $topUpt.fadeOut(500);
-            // $topUpt[0].style.display = 'none';
-        }
-        $topUpt.click(function () {
-            console.log('12')
-            // if ($('html').scrollTop()) {
-            // $('html,body').scrollTop=0
-
-            $('html,body').animate({scrollTop: 0}, 100);//动画效果
-            // $('html').scrollTop=0
-            // return false;
-            $(window).trigger('scroll')
-            // $('html,body').stop()
-
-            // $('html,body').filter(':not(:animated)').animate() // 过滤掉当前
-
-            // $('html,body').stop();//停止当前动画，继续下一个动画
-            // $('html,body').stop(true);//清除元素的所有动画
-            // $('html,body').stop(false, true);//让当前动画直接到达末状态 ，继续下一个动画
-            // $('html,body').stop(true, true);//清除元素的所有动画，让当前动画直接到达末状态
-        });
-
+            if ($(window).scrollTop() > 60) {
+                $topUpt.fadeIn(500);
+                // $topUpt[0].style.display = 'block';
+            } else {
+                $topUpt.fadeOut(500);
+                // $topUpt[0].style.display = 'none';
+            }
+            $topUpt.click(function () {
+                $('html').stop().animate({ scrollTop: 0 }, 500); // 解决动画多次开启
+                // $('html,body').filter(':not(:animated)').animate() // 过滤掉当前
+                // $('html,body').stop();//停止当前动画，继续下一个动画
+                // $('html,body').stop(true);//清除元素的所有动画
+                // $('html,body').stop(false, true);//让当前动画直接到达末状态 ，继续下一个动画
+                // $('html,body').stop(true, true);//清除元素的所有动画，让当前动画直接到达末状态
+            });
 
     })
+
+    // 评论框显示
+
+    $('.dialogue').click(function () {
+      if( $(this).next().is(':hidden')){
+          $(this).next().show()
+      }else {
+          $(this).next().hide()
+      }
+    })
+
 
 
 });

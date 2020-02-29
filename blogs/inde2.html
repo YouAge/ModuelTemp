@@ -8,217 +8,14 @@
     <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/less/temp.css">
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/slideshow.js"></script>
-    <!--        <link rel="stylesheet" href="css/1.css">-->
-    <style>
-        .excerpt {
-            width: 100%;
-            overflow: hidden;
-            margin-bottom: 20px;
-            padding: 10px 0 30px 0;
-            position: relative;
-            border-radius: 3px;
-
-            /*border: red 1px solid;*/
-            transition: all 0.6s;
-        }
-
-        .excerpt:hover {
-            margin-bottom: 27px;
-            padding: 15px 0 40px 0;
-            border-bottom: #d0d2d4 solid 2px;
-            border-top: #d0d2d4 solid 2px;
-        }
-
-        /*.excerpt:hover:before {*/
-        /*    outline: #d0d2d4 20px solid;*/
-        /*    content: '';*/
-        /*    border: 10px solid rgba(255,255,255,0.3);*/
-        /*    padding: 10px solid red;*/
-        /*    display: block;*/
-        /*    width: 100%;*/
-        /*    height: 100%;*/
-        /*    top: 0;*/
-        /*    left: 0;*/
-        /*    position: absolute;*/
-        /*    box-sizing: border-box;*/
-
-        /*}*/
-
-        /*.excerpt:after,*/
-        /*.excerpt:before{*/
-        /*    display: table;*/
-        /*    content: "";*/
-        /*    line-height: 0;*/
-        /*}*/
-        .e-x {
-            /*text-align: center;*/
-            height: 30px;
-            line-height: 30px;
-            margin: 0 10px 15px 0;
-        }
-
-        .label {
-            line-height: 20px;
-            color: #fff;
-            vertical-align: baseline;
-            white-space: nowrap;
-            margin-right: 5px;
-            /*position: relative;*/
-            float: left;
-            top: -2px;
-            padding: 2px 6px 4px;
-        }
-
-        .label-important {
-            background-color: #FC9D9A;
-        }
-
-        .excerpt .e-x h2 {
-            /*line-height: 26px;*/
-            float: left;
-            /*border: 0;*/
-            margin: 0 10px;
-            /*font-size: ;*/
-            font: normal normal 23px "Times New Roman";
-            vertical-align: baseline;
-        }
-
-        .e-x h2 a {
-            color: #00c1de;
-        }
-
-        .excerpt .focus {
-            float: left;
-            width: 26%;
-            margin-right: 10px;
-        }
-
-        .excerpt .focus img {
-            width: 100%;
-            /*动画效果*/
-            -moz-transition: all .5s ease;
-            -webkit-transition: all .5s ease;
-            -ms-transition: all .5s ease;
-            -o-transition: all .5s ease;
-            transition: all .5s ease;
-            transition: all 0.5s;
-        }
-
-        .excerpt .focus:hover img {
-            transform: scale(1.1);
-            opacity: .9;
-        }
-
-        .excerpt .note {
-
-            color: #777;
-            line-height: 24px;
-            font: normal 16px 'Times New Roman',  Georgia,   Times,  serif;;
-            text-indent: 2em;
-            letter-spacing: 2px;
-        }
-
-        .excerpt p.auth-span {
-            float: right;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
-
-        .excerpt .muted {
-            font-size: 13px;
-            margin-right: 20px;
-            color: #999;
-
-        }
-
-        .fa {
-            width: 16px;
-            font-size: 1.23em;
-            text-align: center;
-            display: inline-block;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .excerpt .muted:hover a,
-        .excerpt .muted:last-child a,
-        .excerpt .e-x:hover h2 a {
-            color: red;
-        }
-
-        .fa-user,
-        .fa-comments-o {
-            color: #12b7de;
-        }
-
-
-    </style>
-
-
-    <style>
-        /*// 登入注册*/
-        .box-login {
-            height: 50px;
-            float: right;
-            width: 10%;
-        }
-
-        .login span {
-            line-height: 50px;
-            font-size: 20px;
-            color: #FFFFFF;
-            margin: 0 3px;
-            width: 20px;
-            cursor: pointer;
-        }
-
-        .conceal {
-            display: none;
-        !important;
-        }
-
-        .box-login .stat-bar {
-            height: 50px;
-            color: #FFFFFF;
-            line-height: 50px;
-            /*display: none;*/
-        }
-
-
-    </style>
-
-
-    <style>
-
-
-        .back-upt {
-            display: none;
-            position: fixed;
-            right: 80px;
-            bottom: 70px;
-            text-align: center;
-            cursor: pointer;
-
-        }
-
-        .back-upt i {
-            width: 0;
-            font-size: 50px;
-            color: #1296DB;
-        }
-
-
-    </style>
-
-
 </head>
 <body>
+
+
+
 
 <!--上部分-->
 <header id="header">
@@ -227,46 +24,46 @@
         <h2 id="mnavh"><span class="navicon"></span></h2>
         <!--        logo-->
         <div class="logo">
-            <a href="/">
+            <a href="inde2.html">
                 Master博客
             </a></div>
 
         <nav>
             <!--    导航栏-->
             <ul id="starlist" class="stat-bar">
-                <li><a href="/" id="selected">首页</a></li>
+                <li><a href="inde2.html" id="selected">首页</a></li>
                 <li class="menu"><a href="#">后端</a>
                     <ul class="sub">
-                        <li><a href="#">Python</a></li>
-                        <li><a href="#">Golang</a></li>
-                        <li><a href="#">Node.js</a></li>
+                        <li><a href="pages.html">Python</a></li>
+                        <li><a href="pages.html">Golang</a></li>
+                        <li><a href="pages.html">Node.js</a></li>
                     </ul>
                     <span></span></li>
                 <li class="menu"><a href="#">web前端</a>
                     <ul class="sub">
-                        <li><a href="#">css</a></li>
-                        <li><a href="#">js</a></li>
-                        <li><a href="#">Vue</a></li>
-                        <li><a href="#">React</a></li>
+                        <li><a href="pages.html">css</a></li>
+                        <li><a href="pages.html">js</a></li>
+                        <li><a href="pages.html">Vue</a></li>
+                        <li><a href="pages.html">React</a></li>
                     </ul>
                     <span></span></li>
                 <li class="menu"><a href="#">生活随记</a>
                     <ul class="sub">
-                        <li><a href="#">我的日记</a></li>
-                        <li><a href="#">程序人生</a></li>
+                        <li><a href="pages.html">我的日记</a></li>
+                        <li><a href="pages.html">程序人生</a></li>
                     </ul>
                     <span></span></li>
-                <li><a href="#">碎言碎语</a></li>
-                <li><a href="#">关于我们</a></li>
-                <li><a href="#">时间轴</a></li>
-                <li><a href="#">留言板</a>
+                <li><a href="pages.html">碎言碎语</a></li>
+                <li><a href="pages.html">关于我们</a></li>
+                <li><a href="time-shaft.html">时间轴</a></li>
+                <li><a href="pages.html">留言板</a>
                 </li>
             </ul>
         </nav>
 
         <div class="box-login">
             <div class="login conceal">
-                <span>登入</span>
+                <span><a href="login.html">登入</a></span>
                 <span>||</span>
                 <span>注册</span>
             </div>
@@ -276,11 +73,8 @@
                     <ul class="sub">
                         <li><a href="#">账号信息</a></li>
                         <li><a href="#">登入历史</a></li>
-
                     </ul>
                     <span></span></li>
-
-
             </div>
 
 
@@ -349,18 +143,18 @@
                 <div class="news-item">
                     <!--                    ~~~-->
                     <ul class="news-list" style="display: block">
-                        <li class="sty-li"><i></i><a href="#" title="">安静地做一个爱设计的女子</a>
+                        <li class="sty-li"><i></i><a href="article.html" title="">安静地做一个爱设计的女子</a>
                             <p>自从入了这行，很多人跟我说可以做网络教程，我也有考虑，但最终没有实现，因为我觉得在这个教程泛滥的时代，直接做一套免费的原创个人博客模板更为实在。每当看到自己喜欢的配色图片</p>
                         </li>
-                        <li><i></i><a href="#" title="">电话以外的宁静</a>
+                        <li><i></i><a href="article.html" title="">电话以外的宁静</a>
                             <p>
                                 电话很久没有响过了，我的QQ也很久没有在线了，消失了很多天，刚刚结识的朋友因为我身上又起了红疹，每天都发来消息询问我的情况，我做到了这么多天来的沉默，我相信，没有网络，我还是可以继续我自己的生活</p>
                         </li>
-                        <li><i></i><a href="#" title="">遇见一个未知的你</a>
+                        <li><i></i><a href="article.html" title="">遇见一个未知的你</a>
                             <p>听着那熟悉的歌曲看着那一张张可爱的图片.-读着我们共同欣赏的诗……也许我们曾经相遇,看着你远去的背影 ,沿着你来的方向 ,回忆时间穿梭于幸福的点点滴滴....</p></li>
-                        <li><i></i><a href="#" title="">个人网站做好了，百度不收录怎么办？来，看看他们怎么做的...</a>
+                        <li><i></i><a href="article.html" title="">个人网站做好了，百度不收录怎么办？来，看看他们怎么做的...</a>
                             <p>不管你是学前端的还是后端的，作为一个程序员，做一个自己的博客，那是必然的。咱们的圈子就这么大，想让更多的人了解你，看看你的技术多牛逼，扔一个博客地址就行了</p></li>
-                        <li><i></i><a href="#" title="">个人博客，属于我的小世界！</a>
+                        <li><i></i><a href="article.html" title="">个人博客，属于我的小世界！</a>
                             <p>
                                 个人博客，用来做什么？我刚开始就把它当做一个我吐槽心情的地方，也就相当于一个网络记事本，写上一些关于自己生活工作中的小情小事，也会放上一些照片，音乐。每天工作回家后就能访问自己的网站，一边听着音乐，一边写写文章。</p>
                         </li>
@@ -368,7 +162,7 @@
                     </ul>
                     <!--                    -->
                     <ul class="news-list">
-                        <li class="sty-li"><i></i><a href="#" title="">web端</a>
+                        <li class="sty-li"><i></i><a href="article.html" title="">web端</a>
                             <p>自从入了这行，很多人跟我说可以做网络教程，我也有考虑，但最终没有实现，因为我觉得在这个教程泛滥的时代，直接做一套免费的原创个人博客模板更为实在。每当看到自己喜欢的配色图片</p>
                         </li>
                         <li><i></i><a href="#" title="">电话以外的宁静</a>
@@ -591,23 +385,15 @@
             <h3>标签云</h3>
             <div class="daily-txt clearfix">
                 <div class="daily-tag clearfix">
-                    <!--                    <li>-->
-                    <!--                    <a href="#">pythong算法导论意义<span class="hint-top">55</span></a></li>-->
-                    <!--                    <a href="#">javaScript<span class="hint-top">55</span></a>-->
-                    <!--                    <a href="#">Web前端<span class="hint-top">55</span></a>-->
-                    <!--                    <a href="#">Golang<span class="hint-top">55</span></a>-->
-                    <!--                    <a href="#">人工智能<span class="hint-top">55</span></a>-->
-                    <!--                    <a href="#">算法<span class="hint-top">55</span></a>-->
-                    <!--                    <a href="#">爬虫<span class="hint-top">55</span></a>-->
 
                     <li>
-                        <a href="#">python<span class="hint-top">55</span></a></li>
-                    <li><a href="#">javaScript<span class="hint-top">55</span></a></li>
-                    <li><a href="#">Web前端<span class="hint-top">55</span></a></li>
-                    <li><a href="#">Golang<span class="hint-top">55</span></a></li>
+                        <a href="#">python<span class="hint-top">51</span></a></li>
+                    <li><a href="#">javaScript<span class="hint-top">52</span></a></li>
+                    <li><a href="#">Web前端<span class="hint-top">53</span></a></li>
+                    <li><a href="#">Golang<span class="hint-top">54</span></a></li>
                     <li><a href="#">人工智能<span class="hint-top">55</span></a></li>
-                    <li><a href="#">算法<span class="hint-top">55</span></a></li>
-                    <li><a href="#">爬虫<span class="hint-top">55</span></a></li>
+                    <li><a href="#">算法<span class="hint-top">56</span></a></li>
+                    <li><a href="#">爬虫<span class="hint-top">57</span></a></li>
 
 
                 </div>

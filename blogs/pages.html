@@ -5,111 +5,12 @@
     <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/article.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/slideshow.js"></script>
     <title>列表页</title>
-    <style>
-        .excerpt {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-        .excerpt:after,
-        .excerpt:before{
-            display: table;
-            content: "";
-            line-height: 0;
-        }
-        .e-x{
-            /*text-align: center;*/
-            height: 30px;
-            line-height: 30px;
-            margin: 0 10px 15px 0;
-        }
-        .label{
-            line-height: 20px;
-            color: #fff;
-            vertical-align: baseline;
-            white-space: nowrap;
-            margin-right: 5px;
-            /*position: relative;*/
-            float: left;
-            top: -2px;
-            padding: 2px 6px 4px;
-        }
-        .label-important{
-            background-color: #FC9D9A;
-        }
-        .excerpt .e-x h2{
-            /*line-height: 26px;*/
-            float: left;
-            /*border: 0;*/
-            margin: 0 10px;
-            /*font-size: ;*/
-            font:normal normal 23px "Times New Roman";
-            vertical-align: baseline;
-        }
-        .e-x h2 a{
-            color: #00c1de;
-        }
-        .excerpt .focus{
-            float: left;
-            width: 26%;
-            margin-right: 10px;
-        }
-        .excerpt .focus img{
-            width: 100%;
-        }
-
-        .excerpt .note {
-
-            color: #777;
-            line-height: 24px;
-            font: normal 16px 'Times New Roman', Georgia,  Times, serif;;
-            text-indent: 2em;
-            letter-spacing: 2px;
-        }
-
-        .excerpt p.auth-span {
-            float: right;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-        }
-
-        .excerpt .muted {
-            font-size: 13px;
-            margin-right: 20px;
-            color: #999;
-
-        }
-
-        .fa {
-            width: 16px;
-            font-size: 1.23em;
-            text-align: center;
-            display: inline-block;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .excerpt .muted:hover a,
-        .excerpt .muted:last-child a,
-        .excerpt .e-x:hover h2 a{
-            color: red;
-        }
-
-        .fa-user,
-        .fa-comments-o{
-            color: #12b7de;
-        }
-
-
-    </style>
-
 </head>
 <body>
+<!--上部分-->
 <!--上部分-->
 <header id="header">
 
@@ -120,9 +21,10 @@
             <a href="/">
                 Master博客
             </a></div>
+
         <nav>
             <!--    导航栏-->
-            <ul id="starlist">
+            <ul id="starlist" class="stat-bar">
                 <li><a href="/" id="selected">首页</a></li>
                 <li class="menu"><a href="#">后端</a>
                     <ul class="sub">
@@ -145,58 +47,267 @@
                         <li><a href="#">程序人生</a></li>
                     </ul>
                     <span></span></li>
-                <!--                <li><a href="#">碎言碎语</a></li>-->
-                <!--                <li><a href="#">关于我们</a></li>-->
+                <li><a href="#">碎言碎语</a></li>
+                <li><a href="#">关于我们</a></li>
                 <li><a href="#">时间轴</a></li>
                 <li><a href="#">留言板</a>
                 </li>
             </ul>
         </nav>
+
+        <div class="box-login">
+            <div class="login conceal">
+                <span>登入</span>
+                <span>||</span>
+                <span>注册</span>
+            </div>
+            <div class="stat-bar">
+                <!--                        <i class="fa fa-address-book"></i>-->
+                <li class="menu"><a href="#">个人中心</a>
+                    <ul class="sub">
+                        <li><a href="#">账号信息</a></li>
+                        <li><a href="#">登入历史</a></li>
+
+                    </ul>
+                    <span></span></li>
+
+
+            </div>
+
+
+        </div>
+
     </div>
+
 </header>
+
 <div class="searchbox">
 </div>
 
+
 <article>
     <div class="lbox">
-        <div class="whitebg">
+        <div class="whitebg bloglist">
             <h1>个人博客</h1>
             <p>
                 该片张主要记住 的个人心情和学习心得，人生感悟，读书笔记
             </p>
         </div>
-
+        <!--        /* &#45;&#45;&#45;&#45;文章*/-->
         <div class="whitebg bloglist">
-            <!--                <h2 class="htitle">-->
-            <!--                    最新博文-->
-            <!--                </h2>-->
 
             <div class="excerpt">
                 <div class="e-x">
-                    <a class="label label-important" href="#">Java
-                    <i class="label-arrow"></i></a>
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
                     <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
                 </div>
                 <div class="focus">
                     <a target="_blank" href="#">
-                        <img class="thumb" src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1" alt="Android开发之2048安卓版"></a>
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
                 </div>
                 <p class="note">
                     之前是在eclipse上写的，后面换成了android sudio。
-2048游戏的UI整体可以采用线性布局，即LinearLayout，
-                        其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
 
                 </p>
                 <p class="auth-span">
-                    <span class="muted"><i class="fa fa-user"></i> <a
-                            href="#">Master</a></span>
-                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span> <span class="muted"><i
-                        class="fa fa-eye"></i> 8948浏览</span> <span class="muted"><i class="fa fa-comments-o"></i> <a
-                        target="_blank" href="#">1评论</a></span><span
-                        class="muted">
-<a href="javascript:;" data-action="ding" data-id="2200" id="Addlike" class="action"><i class="fa fa-heart-o"></i><span
-        class="count">19</span>喜欢</a></span></p>
+                    <span class="muted"><i class="fa fa-user"></i> <a href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span>
+                    <span class="muted"><i class="fa fa-eye"></i> 8948浏览</span>
+                    <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="#">1评论</a></span>
+                    <span class="muted"><a href="#"><i class="fa fa-heart-o"></i> 19喜欢</a></span>
+
+                </p>
             </div>
+
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span>
+                    <span class="muted"><i class="fa fa-eye"></i> 8948浏览</span>
+                    <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="#">1评论</a></span>
+                    <span class="muted"><a href="#"><i class="fa fa-heart-o"></i> 19喜欢</a></span>
+                </p>
+            </div>
+
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span>
+                    <span class="muted"><i class="fa fa-eye"></i> 8948浏览</span>
+                    <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="#">1评论</a></span>
+                    <span class="muted"><a href="#"><i class="fa fa-heart-o"></i> 19喜欢</a></span>
+                </p>
+            </div>
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span>
+                    <span class="muted"><i class="fa fa-eye"></i> 8948浏览</span>
+                    <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="#">1评论</a></span>
+                    <span class="muted"><a href="#"><i class="fa fa-heart-o"></i> 19喜欢</a></span>
+                </p>
+            </div>
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span>
+                    <span class="muted"><i class="fa fa-eye"></i> 8948浏览</span>
+                    <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="#">1评论</a></span>
+                    <span class="muted"><a href="#"><i class="fa fa-heart-o"></i> 19喜欢</a></span>
+                </p>
+            </div>
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span>
+                    <span class="muted"><i class="fa fa-eye"></i> 8948浏览</span>
+                    <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="#">1评论</a></span>
+                    <span class="muted"><a href="#"><i class="fa fa-heart-o"></i> 19喜欢</a></span>
+                </p>
+            </div>
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span>
+                    <span class="muted"><i class="fa fa-eye"></i> 8948浏览</span>
+                    <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="#">1评论</a></span>
+                    <span class="muted"><a href="#"><i class="fa fa-heart-o"></i> 19喜欢</a></span>
+                </p>
+            </div>
+            <div class="excerpt">
+                <div class="e-x">
+                    <a class="label label-important" href="#">Python
+                        <i class="label-arrow"></i></a>
+                    <h2><a target="_blank" href="#">Android开发之2048安卓版 </a></h2>
+                </div>
+                <div class="focus">
+                    <a target="_blank" href="#">
+                        <img class="thumb"
+                             src="https://cuiqingcai.com/wp-content/themes/Yusi/timthumb.php?src=https://qiniu.cuiqingcai.com/2020-02-09-131059.png&h=123&w=200&q=90&zc=1&ct=1"
+                             alt="Android开发之2048安卓版"></a>
+                </div>
+                <p class="note">
+                    之前是在eclipse上写的，后面换成了android sudio。
+                    2048游戏的UI整体可以采用线性布局，即LinearLayout，
+                    其中嵌套一个线性布局和一个GridLayout，内嵌的线性布局填充文本框，以显示分数，GridLayout中填充4×4的继承自Fra...
+
+                </p>
+                <p class="auth-span">
+                    <span class="muted"><i class="fa fa-user"></i> <a href="#">Master</a></span>
+                    <span class="muted"><i class="fa fa-clock-o"></i> 2015-11-07 15:06</span>
+                    <span class="muted"><i class="fa fa-eye"></i> 8948浏览</span>
+                    <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="#">1评论</a></span>
+                    <span class="muted"><a href="#"><i class="fa fa-heart-o"></i> 19喜欢</a></span>
+                </p>
+            </div>
+
 
         </div>
 
