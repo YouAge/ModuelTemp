@@ -130,18 +130,6 @@ $(function () {
     }
 
 
-// ----标签按钮
-//         $boxTag.hover(function () {
-//            console.log('123',$(this).find('.hint-top'))
-//             // $(this).find('.hint-top').stop().slideToggle();
-//             $(this).find('.hint-top').stop().slideDown();
-//
-//         },function () {
-//             $(this).find('.hint-top').stop().slideUp()
-//         })
-
-
-
     //===== 回到顶部
     var $topUpt = $('.back-upt')
     // var $windHeight = document.documentElement.clientHeight; // 获取一页的高度
@@ -174,6 +162,37 @@ $(function () {
       }
     })
 
+
+    // 登入 注册按钮 点出
+
+    $("#login-dj").click(function () {
+
+        if ($('#login-box,.login-info').is(':hidden')){
+            $('.register-info').hide() // 隐藏
+            $('#body-img,#login-box,.login-info').show()
+        }else {
+            $('#body-img,#login-box').hide()
+        }
+    })
+
+    $('#register-dj').click(function () {
+        if ($('#login-box,.register-info').is(':hidden')){
+            $('.login-info').hide() // 隐藏
+            $('#login-box,.register-info,#body-img').show()
+        }else {
+            $('#login-box,#body-img').hide()
+        }
+    })
+
+    $('.tag-i').click(function () {
+
+        if( $('.top-cont').is(':hidden')){
+            $('.top-cont').show()
+        }else {
+            $('.top-cont').hide()
+        }
+
+    })
 
 
 });

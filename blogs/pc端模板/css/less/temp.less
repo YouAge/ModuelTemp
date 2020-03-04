@@ -2,10 +2,7 @@
 
 /* 变量 @变量名：*/
 
-@baseColor: #e92322;
-a {
-  color: @baseColor;
-}
+
 
 /* 混入： 可以定义一个好的样式引入到其它央视中：*/
 .addReadius {
@@ -271,40 +268,99 @@ a {
 /*-------登入注册----*/
 
 
-.m-login{
-  width: 500px;
-  height: 500px;
- background-color: #1296DB;
-  text-align: right;
-  margin: 0 auto;
- align-items: center;
 
 
 
+#login-box{
 
-  .login-inp{
-    position: relative;
+  position: fixed;
+  //width: 470px;
+  width: 30%;
+  //height: 258px;
+  height: auto;
+  top: 30%;
+  right: 30%;
+  background: #00000060;
+  padding: 20px 50px;
+  z-index: 50;
+  //内用居中
+  text-align: center;
 
-    div {
-    height: 40px;
-    width: 300px;
-    margin: 10px 30px 10px 0;
-    i {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      //left: 50%;
+  h1{
+    //color: linear-gradient(to right,#db3125 0%, #578bc3 100%);
+    color: #ff0033;
+  }
+  .form{
+    margin-top: 40px;
+    .item {
+      position: relative;
+      margin-top: 15px;
+
+      input {
+        //width: 250px;
+        width:45%;
+        font-size: 18px;
+        border: 0;
+        border-bottom: 2px solid #fff;
+        padding: 5px 10px;
+        background: #ffffff00;
+        color: #fff;
+
+      }
+      .dj-code{
+        //display: block;
+        position: absolute;
+        top: 50%;
+        right: 24%;
+        background-color: dodgerblue;
+        height: 35px;
+        line-height: 35px;
+        width: 80px;
+        border-radius: 13px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        &:hover{
+          position: absolute;
+
+          right: 22%;
+          height: 40px;
+          line-height: 40px;
+          background-color: dodgerblue;
+        }
+      }
+
     }
 
-    input {
-      width: 100%;
-      height: 100%;
-      padding: 10px 15px;
-    }
   }
+  button{
+    cursor: pointer;
+    margin: 30px 0 20px 0;
+    //width: 160px;
+    width: 30%;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+   background-image: linear-gradient(to right,#db3125 0%, #578bc3 100%);
+    border-radius: 15px;
   }
+}
 
 
+#body-img{
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  height: 100%;
+  //background: url("../../images/body2.jpg") no-repeat;
+  background-size: 100% 100%;
+  background-color: #cccccc00;
+  z-index: 10;
+}
+
+#body-img,
+#login-box {
+  display: none;
 }
 
 

@@ -197,9 +197,7 @@ nav {
 
 
 .stat-bar li {
-
     position: relative; /* 相对定位  没有这个都会飘起来*/
-
     float: left;
     display: inline;
     width: max-content;
@@ -472,7 +470,7 @@ nav {
     border-radius: 4px;
     cursor: pointer;
     position: relative;
-    z-index: 10;
+    z-index: 7;
     color: #E9EAED;
     transition: all .6s ease;
 }

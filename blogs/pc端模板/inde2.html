@@ -14,8 +14,55 @@
 </head>
 <body>
 
-
-
+<div id="body-img">
+<!--// 登入注册-->
+<div id="login-box">
+    <div class="login-info">
+        <h1>请登入</h1>
+        <div class="form">
+            <input type="file" id="file_input" style="display:none"/>
+            <form>
+                <div class="item">
+                    <i class="fa fa-user-circle-o"></i>
+                    <input type="text" placeholder="Username">
+                </div>
+                <div class="item">
+                    <i class="fa fa-eye"></i>
+                    <input type="text" placeholder="Password">
+                </div>
+                <button>确认</button>
+            </form>
+        </div>
+    </div>
+    <div class="register-info">
+        <h1>请填写注册信息</h1>
+        <div class="form">
+            <form>
+            <div class="item">
+                <i class="fa fa-user-circle-o"></i>
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="item">
+                <i class="fa fa-eye"></i>
+                <input type="text" placeholder="Password">
+            </div>
+            <div class="item">
+                <i class="fa  fa-envelope"></i>
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="item">
+                <div class="item-code">
+                    <i class="fa  fa-code"></i>
+                    <input type="text" placeholder="验证码">
+                    <div class="dj-code">获取验证码</div>
+                </div>
+            </div>
+            <button>确定</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
 
 <!--上部分-->
 <header id="header">
@@ -27,7 +74,6 @@
             <a href="inde2.html">
                 Master博客
             </a></div>
-
         <nav>
             <!--    导航栏-->
             <ul id="starlist" class="stat-bar">
@@ -63,9 +109,9 @@
 
         <div class="box-login">
             <div class="login conceal">
-                <span><a href="login.html">登入</a></span>
+                <span id="login-dj">登入</span>
                 <span>||</span>
-                <span>注册</span>
+                <span id="register-dj">注册</span>
             </div>
             <div class="stat-bar">
                 <!--                        <i class="fa fa-address-book"></i>-->
@@ -97,13 +143,9 @@
         <div class="banbox">
             <div class="banner">
                 <div id="banner" class="fader">
-
                     <li class="slide"><a href="#" target="_blank"><img src="images/show1.jpg"></a></li>
-
                     <li class="slide"><a href="#" target="_blank"><img src="images/show3.jpg"></a></li>
-
                     <li class="slide"><a href="#" target="_blank"><img src="images/show2.jpg"></a></li>
-
                     <li class="slide"><a href="#" target="_blank"><img src="images/show1.jpg"></a></li>
                     <div class="fader_controls">
                         <div class="page prev" data-target="prev"></div>
@@ -426,7 +468,6 @@
 
 <div class="back-upt" aria-label="回到顶部">
     <i class="fa fa-arrow-circle-up"></i></div>
-
 <script>
 
 

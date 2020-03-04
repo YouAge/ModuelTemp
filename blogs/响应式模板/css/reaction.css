@@ -1,0 +1,21 @@
+@media screen and (min-width: 960px) {
+  .top-box {
+    min-width: 960px;
+  }
+  .tag-i {
+    display: none;
+  }
+}
+@media screen and (max-width: 750px) {
+  header .top-box {
+    width: 100%;
+  }
+  .art-slid {
+    width: 100% !important;
+  }
+  .back-upt,
+  .art-slid-rg {
+    display: none;
+  }
+}
+/*# sourceMappingURL=reaction.css.map */

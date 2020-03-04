@@ -1,7 +1,4 @@
 /* 变量 @变量名：*/
-a {
-  color: #e92322;
-}
 /* 混入： 可以定义一个好的样式引入到其它央视中：*/
 .addReadius {
   border-radius: 10px;
@@ -213,30 +210,77 @@ a {
 }
 /*-----------end-------*/
 /*-------登入注册----*/
-.m-login {
-  width: 500px;
-  height: 500px;
-  background-color: #1296DB;
-  text-align: right;
-  margin: 0 auto;
-  align-items: center;
+#login-box {
+  position: fixed;
+  width: 30%;
+  height: auto;
+  top: 30%;
+  right: 30%;
+  background: #00000060;
+  padding: 20px 50px;
+  z-index: 50;
+  text-align: center;
 }
-.m-login .login-inp {
+#login-box h1 {
+  color: #ff0033;
+}
+#login-box .form {
+  margin-top: 40px;
+}
+#login-box .form .item {
   position: relative;
+  margin-top: 15px;
 }
-.m-login .login-inp div {
-  height: 40px;
-  width: 300px;
-  margin: 10px 30px 10px 0;
+#login-box .form .item input {
+  width: 45%;
+  font-size: 18px;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  padding: 5px 10px;
+  background: #ffffff00;
+  color: #fff;
 }
-.m-login .login-inp div i {
+#login-box .form .item .dj-code {
   position: absolute;
   top: 50%;
-  left: 0;
+  right: 24%;
+  background-color: dodgerblue;
+  height: 35px;
+  line-height: 35px;
+  width: 80px;
+  border-radius: 13px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
-.m-login .login-inp div input {
+#login-box .form .item .dj-code:hover {
+  position: absolute;
+  right: 22%;
+  height: 40px;
+  line-height: 40px;
+  background-color: dodgerblue;
+}
+#login-box button {
+  cursor: pointer;
+  margin: 30px 0 20px 0;
+  width: 30%;
+  height: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  background-image: linear-gradient(to right, #db3125 0%, #578bc3 100%);
+  border-radius: 15px;
+}
+#body-img {
+  position: fixed;
+  top: 60px;
   width: 100%;
   height: 100%;
-  padding: 10px 15px;
+  background-size: 100% 100%;
+  background-color: #cccccc00;
+  z-index: 10;
+}
+#body-img,
+#login-box {
+  display: none;
 }
 /*# sourceMappingURL=temp.css.map */

@@ -1,0 +1,223 @@
+
+/* css 初始化 */
+* {
+    margin: 0;     /* 去除内外边距 */
+    padding: 0;
+}
+ul ,ul li,li {
+    list-style: none;  /*  去除列表样式小点*/
+}
+
+/* // 清楚浮动 */
+.clearfix:before,
+.clearfix:after{
+    display: table;
+    content: "";
+}
+.clearfix:after{
+    clear: both;
+}
+.clearfix {
+    *zoom:1     /*至此ie浏览器低版本*/
+}
+
+a {
+    color: #050505;
+    /* 取消下划线 */
+    text-decoration: none;
+}
+input{
+    /* 所有表单边框为0 */
+    border: 0;
+    /* css3 盒子模型 border和padding都包含到width里面 */
+    box-sizing: border-box;
+}
+
+
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*font-size: 100%;*/
+    font: inherit;
+    vertical-align: baseline;
+}
+/*!*--------------------------------------------------------------------*!*/
+
+
+
+
+body{
+    /*width: 100%;*/
+    /*font: 15px "Microsoft YaHei", Arial, Helvetica, sans-serif;*/
+    font: 15px Georgia,Times, serif, 'Times New Roman', sans-serif;
+
+    color: #333;
+    background: #E9EAED;
+}
+
+header{
+    width: 100%;
+    margin-top: 1px ;
+    /*padding: 5px 0;*/
+    background-color: #1c2327;
+}
+
+header::before {
+    background: #000 linear-gradient(to left, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+    content: "";
+    height: 5px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/*todo 导航栏*/
+
+
+/*-----------------------------------------------*/
+
+.navbox{
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.logo{
+    width: 198px;
+    line-height: 50px;
+    text-align: center;
+    margin-right: 60px;
+    float: left;
+
+}
+.logo a{
+    color: #E9EAED;
+    font-size: 23px;
+    /*font-family: "futura", arial;*/
+    font-family: 'Times New Roman', Georgia,  Times, serif;
+}
+
+nav{
+    float: left;
+    line-height: 50px;
+    height: 50px;
+    background-color: #1c2327;
+    text-align: center;
+}
+
+#starlist>li{
+    position: relative;
+    float: left;
+}
+#starlist li{
+    margin: 0 auto;
+    padding:0  15px;
+    /*display: list-item;*/
+    text-align: -webkit-match-parent;
+    width: max-content;
+}
+
+#starlist>li>a{
+    font-size: 18px;
+}
+
+#starlist li a{
+    /*display: inline;*/
+    float: left;
+    color: #E9EAED;
+    /*font-family: "Microsoft YaHei", Arial;*/
+    font-family: 'Times New Roman', Georgia,  Times, serif;
+}
+
+
+.menu:hover{
+    background-color:#1c2327;
+}
+.menu:before {
+    position: absolute;
+    content: "";
+    top: 22px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    /*-ms-transition: all .5s ease;*/
+    /*-moz-transition: all .5s ease;*/
+    /*-webkit-transition: all .5s ease;*/
+    /*-o-transition: all .5s ease;*/
+    /*transition: all .5s ease;*/
+}
+/*.menu span {*/
+/*    display: none;*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*    background: #12b7de;*/
+/*    opacity: 0.5;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    border-left: #49ccea 1px solid;*/
+/*}*/
+
+.menu:hover>ul{
+    display: block;
+}
+
+#starlist .sub {
+    /*overflow: hidden;*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 50px;*/
+    /*background: #1C2327;*/
+    display: none;
+    /*z-index: 9;*/
+}
+#starlist .menu:hover>.sub {
+    display: block;
+
+}
+
+
+#starlist a:hover {
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.searchbox {
+    width: 1200px;
+    margin: 10px auto;
+    overflow: hidden;
+    background: #ffffff;
+    position: relative;
+}
+
+
+
+
